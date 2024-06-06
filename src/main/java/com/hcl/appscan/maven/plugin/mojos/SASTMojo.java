@@ -127,7 +127,7 @@ public abstract class SASTMojo extends AppScanMojo {
 	}
 
 	protected void setIrxFile() {
-		if(m_output == null || m_output.trim().equals("") || m_output.equals("true")) { //$NON-NLS-1$ $NON-NLS-2$
+		if(m_output == null || "".equals(m_output.trim()) || "true".equals(m_output)) { //$NON-NLS-1$ $NON-NLS-2$
 			m_irx = new File(m_targetDir, getDefaultScanName());
 			getProgress().setStatus(new Message(Message.INFO, Messages.getMessage("missing.output.arg",  m_irx))); //$NON-NLS-1$
 		}
